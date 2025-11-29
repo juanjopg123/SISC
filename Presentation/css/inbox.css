@@ -1,0 +1,115 @@
+﻿:root {
+    --color-azul-oscuro: #002a3f; /* Principal */
+    --color-cyan: #00b2c1; /* Acento */
+    --color-blanco: #ffffff; /* Base */
+    --color-gris: #f6f7f8;
+    --color-texto: #222;
+}
+
+/* ---------- Contenedor general ---------- */
+.inbox-container {
+    max-width: 380px; /* un poco más compacto */
+    margin: 0 auto;
+    height: 100vh;
+    background: var(--color-blanco);
+    box-shadow: 0 .45rem .9rem rgba(0,0,0,.12);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Header / buscador ---------- */
+.inbox-container .bg-white {
+    background: var(--color-blanco) !important;
+}
+
+.inbox-container .border-bottom {
+    border-color: var(--color-cyan) !important;
+}
+
+/* ---------- Buscador ---------- */
+#txtBuscarUsuario {
+    height: 38px;
+    font-size: .9rem;
+    padding-left: 14px;
+}
+
+/* Botón buscar */
+#btnBuscar {
+    height: 34px;
+    font-size: .82rem;
+}
+
+/* ---------- Botones ---------- */
+.inbox-container .btn-primary {
+    background: var(--color-azul-oscuro);
+    border-color: var(--color-azul-oscuro);
+    transition: .2s ease;
+}
+
+.inbox-container .btn-primary:hover {
+    background: #001a29;
+    border-color: #001a29;
+}
+
+.inbox-container .btn-success {
+    background: var(--color-cyan);
+    border-color: var(--color-cyan);
+    transition: .2s ease;
+}
+
+.inbox-container .btn-success:hover {
+    background: #009da9;
+    border-color: #009da9;
+}
+
+/* ---------- Lista de usuarios ---------- */
+.inbox-user {
+    display: flex;
+    align-items: center;
+    padding: .55rem .75rem;
+    border-radius: 10px;
+    background: var(--color-blanco);
+    transition: background .2s ease, transform .18s ease, box-shadow .2s ease;
+}
+
+.inbox-user .fw-semibold {
+    font-size: .92rem;
+    color: var(--color-texto);
+}
+
+.inbox-user small {
+    font-size: .77rem;
+}
+
+/* Avatar placeholder */
+.inbox-user .bg-gradient {
+    width: 44px;
+    height: 44px;
+    border-radius: 100px;
+    background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-azul-oscuro) 100%);
+}
+
+/* Estado en línea */
+.inbox-user .badge {
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    background: var(--color-cyan) !important;
+    margin-left: 8px;
+}
+
+/* ---------- Hover con animación ---------- */
+.inbox-user:hover {
+    background: rgba(0, 178, 193, .08);
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,.12);
+}
+
+/* ---------- Scroll area ---------- */
+.inbox-container .overflow-auto {
+    background: var(--color-gris);
+    padding: .5rem .75rem;
+}
