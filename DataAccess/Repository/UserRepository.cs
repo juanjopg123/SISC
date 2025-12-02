@@ -49,7 +49,6 @@ namespace DataAccess.Repository
             }
         }
 
-
         // Leer por Id
         public AttributesUser ObtenerUsuarioPorId(int id)
         {

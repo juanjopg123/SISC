@@ -1,115 +1,174 @@
-﻿:root {
+﻿/*  Colores institucionales */
+:root {
     --color-azul-oscuro: #002a3f; /* Principal */
     --color-cyan: #00b2c1; /* Acento */
-    --color-blanco: #ffffff; /* Base */
-    --color-gris: #f6f7f8;
-    --color-texto: #222;
+    --color-blanco: #ffffff; /* Fondo/base */
 }
 
-/* ---------- Contenedor general ---------- */
-.inbox-container {
-    max-width: 380px; /* un poco más compacto */
-    margin: 0 auto;
-    height: 100vh;
-    background: var(--color-blanco);
-    box-shadow: 0 .45rem .9rem rgba(0,0,0,.12);
-    border-radius: 12px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+/* CONTENEDOR PRINCIPAL */
+.container-xl {
+    background: #ffffff !important;
+    border-radius: 28px !important;
+    margin-top: 20px !important;
+    padding: 0 !important;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08) !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease-in-out !important;
 }
 
-/* ---------- Header / buscador ---------- */
-.inbox-container .bg-white {
-    background: var(--color-blanco) !important;
+/* BUSCADOR */
+.search-box {
+    background: #ffffff !important;
+    border: none !important;
+    padding: 28px 24px !important;
+    position: relative !important;
+    border-radius: 28px !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06) !important;
+    transition: all 0.3s ease-in-out !important;
 }
 
-.inbox-container .border-bottom {
-    border-color: var(--color-cyan) !important;
+.search-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, #f7f9fc, #eceff5);
+    z-index: -1;
+    border-radius: 28px;
 }
 
-/* ---------- Buscador ---------- */
-#txtBuscarUsuario {
-    height: 38px;
-    font-size: .9rem;
-    padding-left: 14px;
+/* Input buscar */
+.search-input {
+    background: #f2f4f7 !important;
+    border: none !important;
+    height: 54px !important;
+    border-radius: 28px !important;
+    flex: 1 !important;
+    padding-left: 50px !important;
+    font-size: 0.95rem !important;
+    transition: all 0.25s ease-in-out !important;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.06) !important;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/149/149852.png') !important;
+    background-size: 20px !important;
+    background-repeat: no-repeat !important;
+    background-position: 18px center !important;
+    opacity: .95 !important;
+}
+
+.search-input:focus {
+    background-color: #e9ecf2 !important;
+    box-shadow: 0 0 0 4px rgba(76,110,245,0.25) !important;
+}
+
+/* Contenedor del buscador en fila */
+.search-row {
+    display: flex !important;
+    gap: 12px !important;
+    align-items: center !important;
 }
 
 /* Botón buscar */
-#btnBuscar {
-    height: 34px;
-    font-size: .82rem;
-}
-
-/* ---------- Botones ---------- */
-.inbox-container .btn-primary {
+.btn-buscar {
     background: var(--color-azul-oscuro);
-    border-color: var(--color-azul-oscuro);
-    transition: .2s ease;
+    border: none !important;
+    border-radius: 1000px !important;
+    height: 54px !important;
+    padding: 0 28px !important;
+    font-weight: 600 !important;
+    color: #fff !important;
+    font-size: .95rem !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    transition: all .3s ease !important;
 }
 
-.inbox-container .btn-primary:hover {
-    background: #001a29;
-    border-color: #001a29;
-}
-
-.inbox-container .btn-success {
+.btn-buscar:hover {
     background: var(--color-cyan);
-    border-color: var(--color-cyan);
-    transition: .2s ease;
+    transform: translateY(-3px) !important;
 }
 
-.inbox-container .btn-success:hover {
-    background: #009da9;
-    border-color: #009da9;
+.btn-buscar:active {
+    transform: scale(0.96) !important;
+    box-shadow: 0 4px 10px rgba(76,110,245,0.3) !important;
 }
 
-/* ---------- Lista de usuarios ---------- */
+/* HEADER / NUEVO CHAT */
+.header-chat {
+    background: #ffffff !important;
+    border-bottom: 1px solid #eef0f4 !important;
+    padding: 18px 28px !important;
+}
+
+.header-title {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    color: #1d1f24 !important;
+}
+
+/* Botón nuevo chat */
+.btn-nuevo-chat {
+    background: var(--color-azul-oscuro);
+    border-radius: 28px !important;
+    height: 38px !important;
+    color: white !important;
+    border: none !important;
+    padding: 6px 18px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease-in-out !important;
+    cursor: pointer !important;
+}
+
+.btn-nuevo-chat:hover {
+    background: var(--color-cyan);
+    transform: translateY(-2px) !important;
+}
+
+/* LISTA DE USUARIOS */
+.user-list {
+    background: #f5f7fa !important;
+    padding: 22px !important;
+    min-height: 280px !important;
+}
+
+/* Usuario en lista */
 .inbox-user {
-    display: flex;
-    align-items: center;
-    padding: .55rem .75rem;
-    border-radius: 10px;
-    background: var(--color-blanco);
-    transition: background .2s ease, transform .18s ease, box-shadow .2s ease;
+    display: flex !important;
+    align-items: center !important;
+    background: #ffffff !important;
+    padding: 14px 16px !important;
+    border-radius: 22px !important;
+    border: 1px solid #e6e8ef !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06) !important;
+    transition: all 0.3s ease-in-out !important;
+    cursor: pointer !important;
 }
 
-.inbox-user .fw-semibold {
-    font-size: .92rem;
-    color: var(--color-texto);
-}
-
-.inbox-user small {
-    font-size: .77rem;
-}
-
-/* Avatar placeholder */
-.inbox-user .bg-gradient {
-    width: 44px;
-    height: 44px;
-    border-radius: 100px;
-    background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-azul-oscuro) 100%);
-}
-
-/* Estado en línea */
-.inbox-user .badge {
-    width: 10px;
-    height: 10px;
-    border-radius: 100px;
-    background: var(--color-cyan) !important;
-    margin-left: 8px;
-}
-
-/* ---------- Hover con animación ---------- */
 .inbox-user:hover {
-    background: rgba(0, 178, 193, .08);
-    cursor: pointer;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0,0,0,.12);
+    background: #eef2ff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
 }
 
-/* ---------- Scroll area ---------- */
-.inbox-container .overflow-auto {
-    background: var(--color-gris);
-    padding: .5rem .75rem;
+/* Avatar circular */
+.user-avatar {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(145deg, #ffe9d6, #ffb276) !important;
+    box-shadow: 0 6px 15px rgba(255,178,118,0.4) !important;
+}
+
+/* Nombre */
+.user-name {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #1e1f24 !important;
+}
+
+/* Indicador en línea */
+.user-online {
+    width: 12px !important;
+    height: 12px !important;
+    background: #4ee173 !important;
+    border-radius: 50% !important;
+    box-shadow: 0 0 10px rgba(78,225,115,0.8) !important;
 }

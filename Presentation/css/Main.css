@@ -652,7 +652,7 @@ body .card {
 
 /* BOTÓN POSTULAR */
 .applyjb-btn-success {
-    background-color: #1cc88a !important;
+    background-color: var(--color-azul-oscuro);
     border: none !important;
     color: #fff;
     padding: 10px 18px;
@@ -668,8 +668,9 @@ body .card {
 }
 
 .applyjb-btn-success:hover {
-    background-color: #17a673 !important;
+    background-color: var(--color-cyan);
     transform: translateY(-2px);
+    color: #fff;
 }
 
 .applyjb-btn-success:focus,

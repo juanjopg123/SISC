@@ -10,13 +10,15 @@
     <div class="container-xl mt-3 mt-lg-4 mb-4">
 
         <%--  Header  --%>
-        <div class="row mb-3">
-            <div class="col-12 d-flex align-items-center">
-                <a href="Inbox.aspx" class="btn btn-sm btn-outline-secondary rounded-pill me-3">← Volver</a>
-                <img id="imgAvatar" runat="server" class="rounded-circle me-2" width="36" height="36" />
-                <div>
-                    <h5 class="mb-0 fw-bold"><%= NombreDestino %></h5>
-                </div>
+        <div class="chat-header d-flex align-items-center">
+            <a href="Inbox.aspx" class="btn-back">
+                <span class="arrow">←</span>
+            </a>
+
+            <img id="imgAvatar" runat="server" class="chat-avatar" width="42" height="42" />
+
+            <div class="chat-info">
+                <h5 class="chat-name"><%= NombreDestino %></h5>
             </div>
         </div>
 

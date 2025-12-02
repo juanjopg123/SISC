@@ -30,7 +30,7 @@
 
             <asp:Button ID="btnPostular" runat="server"
                 Text="Postularme"
-                CssClass="applyjb-btn-success btn btn-success"
+                CssClass="applyjb-btn-success btn"
                 OnClick="btnPostular_Click" />
 
         </asp:Panel>
