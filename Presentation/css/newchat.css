@@ -2,10 +2,6 @@
     --color-azul-oscuro: #002a3f; /* Principal */
     --color-cyan: #00b2c1; /* Acento */
     --color-blanco: #ffffff; /* Fondo/base */
-}
-
-/* Paleta moderna */
-:root {
     --bg-main: #f4f6f9;
     --bg-card: #ffffff;
     --primary: #2563eb;
@@ -173,16 +169,18 @@ body {
 
 /* Avatar circular */
 .newchat-avatar {
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background: var(--color-azul-oscuro);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 700;
-    font-size: 1rem;
+    object-fit: cover;
+    border: 2px solid #2563eb;
+    transition: all 0.25s ease;
+}
+
+/* Hover sobre cada usuario */
+.newchat-item:hover .newchat-avatar {
+    border: 2px solid #2563eb;
+    transform: scale(1.05);
 }
 
 /* Texto */
@@ -202,4 +200,160 @@ body {
 
 .newchat-item:hover .newchat-arrow svg {
     transform: translateX(3px);
+}
+
+/*MODO OSCURO*/
+body.dark-mode {
+    --bg-main: #0d0f12;
+    --bg-card: #17191d;
+    --primary: #4da3ff;
+    --primary-dark: #1b4fa3;
+    --text-dark: #f1f5f9;
+    --text-light: #94a3b8;
+    --shadow-1: 0 4px 14px rgba(0,0,0,0.35);
+    --shadow-hover: 0 10px 24px rgba(0,0,0,0.55);
+}
+
+/* Fondo general */
+body.dark-mode {
+    background: var(--bg-main) !important;
+    color: var(--text-dark) !important;
+}
+
+/* Contenedor principal */
+body.dark-mode .newchat-card {
+    background: var(--bg-card) !important;
+    box-shadow: var(--shadow-1) !important;
+    border: 1px solid #1f2329 !important;
+}
+
+/* Títulos */
+body.dark-mode .newchat-title {
+    color: var(--text-dark) !important;
+}
+
+body.dark-mode .newchat-subtitle {
+    color: var(--text-light) !important;
+}
+
+/* Badge */
+body.dark-mode .newchat-badge {
+    background: var(--primary-dark) !important;
+    color: #e5f0ff !important;
+}
+
+/* BUSCADOR - Modo dark */
+body.dark-mode .newchat-searchbar {
+    background: #111317 !important;
+    border-radius: 1000px !important;
+    padding: 14px 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    border: 1px solid #1f2329 !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35) !important;
+    transition: all .28s ease !important;
+}
+
+body.dark-mode .newchat-searchbar:hover {
+    box-shadow: 0 10px 28px rgba(0,0,0,0.55) !important;
+}
+
+/* ICONO */
+body.dark-mode .newchat-icon {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 50% !important;
+    background: rgba(37, 99, 235, .10) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all .25s ease !important;
+}
+
+body.dark-mode .newchat-icon svg {
+    width: 20px !important;
+    height: 20px !important;
+    opacity: .7 !important;
+    transition: opacity .25s ease !important;
+}
+
+body.dark-mode .newchat-searchbar:hover .newchat-icon svg {
+    opacity: 1 !important;
+}
+
+/* INPUT */
+body.dark-mode .newchat-input {
+    flex-grow: 1 !important;
+    background: transparent !important;
+    border: none !important;
+    font-size: 1.12rem !important;
+    padding: 6px 8px !important;
+    font-weight: 500 !important;
+    color: #f1f5f9 !important; /* texto claro en dark */
+}
+
+body.dark-mode .newchat-input::placeholder {
+    color: #6c7380 !important;
+}
+
+/* BOTÓN */
+body.dark-mode .newchat-btn-search {
+    background: #002a3f !important; /* azul oscuro igual al modo normal */
+    color: white !important;
+    border: none !important;
+    border-radius: 1000px !important;
+    padding: 0 22px !important;
+    height: 42px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 600 !important;
+    font-size: .95rem !important;
+    transition: all .28s ease !important;
+}
+
+body.dark-mode .newchat-btn-search:hover {
+    background: #00b2c1 !important; /* color hover igual que normal */
+    transform: translateY(-2px) !important;
+}
+
+body.dark-mode .newchat-btn-search:active {
+    transform: scale(.95) !important;
+}
+
+
+/* LISTA DE USUARIOS */
+body.dark-mode .newchat-item {
+    background: #121417 !important;
+    box-shadow: var(--shadow-1) !important;
+    border: 1px solid #1e2228 !important;
+}
+
+body.dark-mode .newchat-item:hover {
+    background: #1a1d21 !important;
+    box-shadow: var(--shadow-hover) !important;
+}
+
+body.dark-mode .newchat-username {
+    color: var(--text-dark) !important;
+}
+
+body.dark-mode .newchat-hint {
+    color: var(--text-light) !important;
+}
+
+/* Avatar */
+body.dark-mode .newchat-avatar {
+    background: var(--color-cyan) !important;
+    color: #002a3f !important;
+}
+
+/* Flecha */
+body.dark-mode .newchat-arrow svg {
+    fill: var(--primary) !important;
+}
+
+body.dark-mode .newchat-item:hover .newchat-arrow svg {
+    transform: translateX(3px) !important;
 }

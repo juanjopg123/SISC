@@ -2,9 +2,7 @@
     Inherits="Presentation.JobBoardList.ApplyJob" MasterPageFile="~/MainPage.Master" %>
 
 <asp:Content ID="HeadContent" ContentPlaceHolderID="head" runat="server">
-
     <link href="css/Main.css" rel="stylesheet" />
-
 </asp:Content>
 
 <asp:Content ID="MainContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -19,6 +17,9 @@
             ¡Tu postulación ha sido enviada exitosamente!
         </div>
 
+        <!-- MENSAJE DE ERROR -->
+        <asp:Label ID="lblError" runat="server" ForeColor="Red" Visible="False"></asp:Label>
+
         <!-- FORMULARIO -->
         <asp:Panel ID="pnlFormulario" runat="server">
 
@@ -26,7 +27,9 @@
 
             <asp:FileUpload ID="fuCV" runat="server" CssClass="applyjb-input form-control" />
 
-            <br />
+            <br /> 
+
+            <asp:HiddenField ID="hfIdOferta" runat="server" />
 
             <asp:Button ID="btnPostular" runat="server"
                 Text="Postularme"

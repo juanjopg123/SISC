@@ -12,7 +12,12 @@
                     Placeholder="Buscar usuario…" />
 
                 <asp:Button ID="btnBuscar" runat="server" Text="Buscar"
-                    CssClass="btn-buscar" />
+                    CssClass="btn-buscar"
+                    OnClick="btnBuscar_Click" />
+
+                <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar"
+                    CssClass="btn-limpiar"
+                    OnClick="btnLimpiar_Click" />
             </div>
         </div>
 
@@ -32,7 +37,7 @@
                     <div class="inbox-user"
                         onclick="abrirConversacion(<%# Eval("IdUsuario") %>, '<%# Eval("Nombre") %>')">
 
-                        <div class="user-avatar me-3"></div>
+                        <img src='<%# Eval("FotoPerfil") %>' class="user-avatar" width="42" height="42" />
 
                         <div class="flex-fill">
                             <div class="user-name"><%# Eval("Nombre") %></div>

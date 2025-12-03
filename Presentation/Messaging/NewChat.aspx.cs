@@ -29,11 +29,21 @@ namespace Presentation.Messaging
                 .Where(u => u.IdUsuario != usuarioId)
                 .ToList();
 
+            // Asignar foto de perfil a cada usuario
+            foreach (var u in usuarios)
+            {
+                string rutaFoto = _userService.ObtenerFotoPerfil(u.IdUsuario);
+                if (string.IsNullOrEmpty(rutaFoto))
+                {
+                    rutaFoto = "~/Resources/perfiles/default.png"; // ruta de foto por defecto
+                }
+
+                u.FotoPerfil = ResolveUrl(rutaFoto);
+            }
+
             rptUsuarios.DataSource = usuarios;
             rptUsuarios.DataBind();
         }
-
-
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {

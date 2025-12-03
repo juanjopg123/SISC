@@ -24,6 +24,15 @@ namespace Presentation.JobBoardList
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertExito;
 
         /// <summary>
+        /// Control lblError.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
+
+        /// <summary>
         /// Control pnlFormulario.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace Presentation.JobBoardList
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fuCV;
+
+        /// <summary>
+        /// Control hfIdOferta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfIdOferta;
 
         /// <summary>
         /// Control btnPostular.

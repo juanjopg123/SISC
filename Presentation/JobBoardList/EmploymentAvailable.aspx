@@ -2,10 +2,8 @@
     Inherits="Presentation.JobBoardList.EmploymentAvailable" MasterPageFile="~/MainPage.Master" %>
 
 <asp:Content ID="HeadContent" ContentPlaceHolderID="head" runat="server">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link href="css/Main.css" rel="stylesheet" />
-
 </asp:Content>
 
 <asp:Content ID="MainContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -36,7 +34,6 @@
     <!-- LISTADO DE EMPLEOS -->
     <asp:Repeater ID="rptJobs" runat="server" OnItemCommand="rptJobs_ItemCommand" OnItemDataBound="rptJobs_ItemDataBound">
         <ItemTemplate>
-
             <div class="card empav-job-card mb-3">
                 <div class="card-body">
 
@@ -56,9 +53,7 @@
                             ID="btnPostularme"
                             runat="server"
                             CssClass="btn btn-success btn-sm empav-btn-success"
-                            CommandName="Postularme"
-                            CommandArgument='<%# Eval("IdOferta") %>'
-                            PostBackUrl='ApplyJob.aspx?id=<%# Eval("IdOferta") %>'>
+                            PostBackUrl='<%# "ApplyJob.aspx?id=" + Eval("IdOferta") %>'>
                             <i class="bi bi-send"></i> Postularme
                         </asp:LinkButton>
 

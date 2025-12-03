@@ -67,7 +67,7 @@
 }
 
 /* Botón buscar */
-.btn-buscar {
+.btn-buscar, .btn-limpiar {
     background: var(--color-azul-oscuro);
     border: none !important;
     border-radius: 1000px !important;
@@ -81,12 +81,12 @@
     transition: all .3s ease !important;
 }
 
-.btn-buscar:hover {
+.btn-buscar:hover, .btn-limpiar:hover {
     background: var(--color-cyan);
     transform: translateY(-3px) !important;
 }
 
-.btn-buscar:active {
+.btn-buscar:active, .btn-limpiar:active{
     transform: scale(0.96) !important;
     box-shadow: 0 4px 10px rgba(76,110,245,0.3) !important;
 }
@@ -154,7 +154,19 @@
     height: 50px !important;
     border-radius: 50% !important;
     background: linear-gradient(145deg, #ffe9d6, #ffb276) !important;
-    box-shadow: 0 6px 15px rgba(255,178,118,0.4) !important;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #2563eb;
+}
+
+.user-avatar:hover {
+    border: 2px solid #2563eb;
+    transform: scale(1.05);
+}
+
+.inbox-user:hover .user-avatar {
+    border: 2px solid #2563eb;
+    transform: scale(1.05);
 }
 
 /* Nombre */
@@ -171,4 +183,167 @@
     background: #4ee173 !important;
     border-radius: 50% !important;
     box-shadow: 0 0 10px rgba(78,225,115,0.8) !important;
+}
+
+
+/*MODO OSCURO*/
+body.dark-mode {
+    --color-azul-oscuro: #0d1b2a !important; /* Azul profundo */
+    --color-cyan: #00b2c1 !important;        /* Acento institucional */
+    --color-blanco: #1a1a1a !important;      /* Fondo oscuro */
+
+    color: #e5e5e5 !important;
+    background-color: var(--color-blanco) !important;
+    transition: background-color .3s ease, color .3s ease !important;
+}
+
+/* CONTENEDOR PRINCIPAL */
+body.dark-mode .container-xl {
+    background: #1f1f1f !important;
+    border-radius: 28px !important;
+    margin-top: 20px !important;
+    padding: 0 !important;
+    box-shadow: 0 12px 25px rgba(0,180,216,0.08) !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease-in-out !important;
+}
+
+/* BUSCADOR */
+body.dark-mode .search-box {
+    background: #1f1f1f !important;
+    border: none !important;
+    padding: 28px 24px !important;
+    border-radius: 28px !important;
+    position: relative !important;
+}
+
+body.dark-mode .search-box::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(145deg, #1c1c1c, #222) !important;
+    z-index: -1 !important;
+    border-radius: 28px !important;
+}
+
+/* INPUT */
+body.dark-mode .search-input {
+    background: #121212 !important;
+    border: 1px solid #2c2c2c !important;
+    height: 54px !important;
+    border-radius: 28px !important;
+    padding-left: 50px !important;
+    color: #e5e5e5 !important;
+
+    background-image: url('https://cdn-icons-png.flaticon.com/512/149/149852.png') !important;
+    background-size: 20px !important;
+    background-repeat: no-repeat !important;
+    background-position: 18px center !important;
+
+    opacity: .95 !important;
+    transition: all .25s ease !important;
+}
+
+body.dark-mode .search-input:focus {
+    border-color: var(--color-cyan) !important;
+    box-shadow: 0 0 0 4px rgba(0,178,193,0.25) !important;
+    background-color: #1b1b1b !important;
+}
+
+/* FILA */
+body.dark-mode .search-row {
+    display: flex !important;
+    gap: 12px !important;
+    align-items: center !important;
+}
+
+/* BOTÓN BUSCAR */
+body.dark-mode .btn-buscar, .btn-limpiar {
+    background: var(--color-cyan) !important;
+    border-radius: 1000px !important;
+    height: 54px !important;
+    padding: 0 28px !important;
+    font-weight: 600 !important;
+    border: none !important;
+    color: #fff !important;
+    transition: all .3s ease !important;
+}
+
+body.dark-mode .btn-buscar:hover, .btn-limpiar:hover {
+    background: #0097a7 !important;
+    color: #fff !important;
+    transform: translateY(-3px) !important;
+}
+
+/* HEADER */
+body.dark-mode .header-chat {
+    background: #1f1f1f !important;
+    border-bottom: 1px solid #2c2c2c !important;
+    padding: 18px 28px !important;
+}
+
+body.dark-mode .header-title {
+    color: #e5e5e5 !important;
+    font-weight: 700 !important;
+}
+
+/* BOTÓN NUEVO CHAT */
+body.dark-mode .btn-nuevo-chat {
+    background: var(--color-cyan) !important;
+    border-radius: 28px !important;
+    height: 38px !important;
+    color: #fff !important;
+    padding: 6px 18px !important;
+    font-weight: 600 !important;
+    transition: all .3s ease !important;
+}
+
+body.dark-mode .btn-nuevo-chat:hover {
+    background: #0097a7 !important;
+    color: #fff !important;
+    transform: translateY(-2px) !important;
+}
+
+/* LISTA DE USUARIOS */
+body.dark-mode .user-list {
+    background: #1a1a1a !important;
+    padding: 22px !important;
+}
+
+/* USUARIO */
+body.dark-mode .inbox-user {
+    background: #1f1f1f !important;
+    border: 1px solid #2c2c2c !important;
+    border-radius: 22px !important;
+    padding: 14px 16px !important;
+    box-shadow: 0 4px 10px rgba(0,180,216,0.06) !important;
+    transition: all .3s ease !important;
+}
+
+body.dark-mode .inbox-user:hover {
+    background: #002133 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 20px rgba(0,180,216,0.15) !important;
+}
+
+/* AVATAR */
+body.dark-mode .user-avatar {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(145deg, #444, #2e2e2e) !important;
+}
+
+/* NOMBRE */
+body.dark-mode .user-name {
+    color: #e5e5e5 !important;
+}
+
+/* ONLINE */
+body.dark-mode .user-online {
+    width: 12px !important;
+    height: 12px !important;
+    background: #32e47c !important;
+    border-radius: 50% !important;
+    box-shadow: 0 0 10px rgba(50,228,124,0.7) !important;
 }

@@ -386,7 +386,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\CV\" />
+    <Folder Include="Resources\CVs\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

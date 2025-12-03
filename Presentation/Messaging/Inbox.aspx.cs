@@ -17,6 +17,7 @@ namespace Presentation.Messaging
             _messagesService = new MessagesService();
             _userService = new UserService();
         }
+
         MainPage MasterPage
         {
             get { return (MainPage)this.Master; }
@@ -33,24 +34,39 @@ namespace Presentation.Messaging
         private void CargarUsuarios(string filtro = "")
         {
             int usuarioId = ObtenerUsuarioLogueadoId();
+            if (usuarioId == 0) return;
+
+            // Obtener últimos mensajes
             var ultimosMensajes = _messagesService.ObtenerUltimosMensajes(usuarioId);
 
-            // Obtener IDs de usuarios distintos con los que se tiene conversación
+            // Obtener los IDs de usuarios con los que tienes mensajes
             var usuariosId = ultimosMensajes
                 .Select(m => m.IdEmisor == usuarioId ? m.IdReceptor : m.IdEmisor)
                 .Distinct()
                 .ToList();
 
-            // Traer datos de usuario solo de esos IDs
+            // Obtener información de los usuarios
             var usuarios = _userService.ObtenerUsuariosPorIds(usuariosId);
 
+            // Asignar foto de perfil
+            foreach (var u in usuarios)
+            {
+                string rutaFoto = _userService.ObtenerFotoPerfil(u.IdUsuario);
+                if (string.IsNullOrEmpty(rutaFoto))
+                    rutaFoto = "~/Resources/perfiles/default.png";
+
+                u.FotoPerfil = ResolveUrl(rutaFoto);
+            }
+
+            // Filtrar por nombre si hay texto en la búsqueda
             if (!string.IsNullOrEmpty(filtro))
             {
                 usuarios = usuarios
-                    .Where(u => u.Nombre.IndexOf(filtro, StringComparison.OrdinalIgnoreCase) >= 0)
+                    .Where(u => u.Nombre != null && u.Nombre.IndexOf(filtro, StringComparison.OrdinalIgnoreCase) >= 0)
                     .ToList();
             }
 
+            // Asignar al Repeater y mostrar
             rptUsuarios.DataSource = usuarios;
             rptUsuarios.DataBind();
         }
@@ -63,17 +79,22 @@ namespace Presentation.Messaging
 
         private int ObtenerUsuarioLogueadoId()
         {
-            // Ajusta según tu mecanismo de autenticación
             if (Session["IdUsuario"] != null)
                 return Convert.ToInt32(Session["IdUsuario"]);
             else
                 MasterPage.MostrarModal("Error", "Usuario no logueado.");
+
             return 0;
         }
+
         protected void btnNuevoChat_Click(object sender, EventArgs e)
         {
-            // Aquí puedes abrir un modal o redirigir a una página de búsqueda de usuarios
             Response.Redirect("../Messaging/NewChat.aspx");
+        }
+        protected void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtBuscarUsuario.Text = "";
+            CargarUsuarios();           
         }
 
     }

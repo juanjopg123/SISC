@@ -15,17 +15,13 @@ namespace Presentation.Messaging
     public partial class Chat : Page
     {
 
-        /* ==========================================
-         * SERVICES
-         * ========================================== */
+        /* SERVICES */
         private readonly MessagesService _msgSvc = new MessagesService();
         private readonly MessageAttachmentsService _attSvc = new MessageAttachmentsService();
         private readonly MessageReactionsService _reactSvc = new MessageReactionsService();
         private readonly UserService _userSvc = new UserService();
 
-        /* ==========================================
-         * PROPIEDADES DE LECTURA RÁPIDA
-         * ========================================== */
+        /* PROPIEDADES DE LECTURA RÁPIDA */
         private int UsuarioActual
         {
             get
@@ -51,9 +47,7 @@ namespace Presentation.Messaging
             }
         }
 
-        /* ==========================================
-         * DATOS PARA EL MARKUP (NOMBRE DEL DESTINO)
-         * ========================================== */
+        /* DATOS PARA EL MARKUP (NOMBRE DEL DESTINO) */
         public string NombreDestino
         {
             get
@@ -63,9 +57,7 @@ namespace Presentation.Messaging
             }
         }
 
-        /* ==========================================
-         * PAGE LOAD
-         * ========================================== */
+        /* PAGE LOAD */
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -89,9 +81,7 @@ namespace Presentation.Messaging
             }
         }
 
-        /* ==========================================
-        * Repeater
-        * ========================================== */
+        /* Repeater */
 
         protected void rptHistorial_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
@@ -116,13 +106,7 @@ namespace Presentation.Messaging
             }
         }
 
-
-
-
-
-        /* ==========================================
-         * WEB METHOD: HISTORIAL PARA JS
-         * ========================================== */
+        /* WEB METHOD: HISTORIAL PARA JS */
         [WebMethod]
         public static List<MensajeChatDto> ObtenerHistorial(int usuarioDestino)
         {

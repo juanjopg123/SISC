@@ -1,21 +1,19 @@
 ﻿:root {
+    --color-azul-oscuro: #002a3f; /* Principal */
+    --color-cyan: #00b2c1; /* Acento */
+    --color-blanco: #ffffff; /* Fondo/base */
     --msg-out-bg: #0084ff;
     --msg-out-text: #ffffff;
     --msg-in-bg: #f1f0f0;
     --msg-in-text: #050505;
-
     --check-active: #0084ff;
     --check-pending: #8a8d91;
-
     --input-bg: #ffffff;
     --input-border: #ced0d4;
-
     --send-btn-bg: #0084ff;
     --send-btn-hover: #0069d9;
-
     --scroll-thumb: #c8ccd1;
 }
-
 
 /* HEADER (Volver, Avatar, Nombre) */
 
@@ -194,4 +192,138 @@
 /* Icono */
 #btnEnviar svg {
     filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.18));
+}
+
+/*MODO OSCURO*/
+body.dark-mode {
+    --scroll-thumb: #3a3f4a !important;
+    --msg-out-bg: #003344 !important;
+    --msg-out-text: #e8f9ff !important;
+    --msg-in-bg: #1f1f1f !important;
+    --msg-in-text: #e5e5e5 !important;
+    --check-pending: #6c7a89 !important;
+    --check-active: #00d4ff !important;
+    --send-btn-bg: #00b2c1 !important;
+    --send-btn-hover: #0093a0 !important;
+}
+
+/* CABECERA DEL CHAT */
+body.dark-mode .chat-header {
+    background: #1f1f1f !important;
+    padding: 14px 18px !important;
+    border-radius: 18px !important;
+    border: 1px solid #2c2c2c !important;
+    margin-bottom: 18px !important;
+    display: flex !important;
+    gap: 14px !important;
+    align-items: center !important;
+}
+
+/* Botón volver */
+body.dark-mode .btn-back {
+    background: #1f1f1f !important;
+    border: 2px solid #2d2d2d !important;
+    color: #00b2c1 !important;
+    transition: all .25s ease-in-out !important;
+}
+
+body.dark-mode .btn-back:hover {
+    background: var(--color-cyan) !important;
+    border-color: #00b2c1 !important;
+    transform: translateY(-2px) !important;
+}
+
+body.dark-mode .btn-back .arrow {
+    color: #fff !important;
+}
+
+/* Nombre + estado */
+body.dark-mode .chat-name {
+    color: #fafafa !important;
+}
+
+body.dark-mode .chat-status {
+    color: #00b2c1 !important;
+}
+
+/* VENTANA DEL CHAT */
+body.dark-mode #chatWindow {
+    background: #121212 !important;
+    border-radius: 22px !important;
+    padding: 22px !important;
+    border: 1px solid #2b2b2b !important;
+}
+
+/* Scroll */
+body.dark-mode #chatWindow::-webkit-scrollbar-thumb {
+    background: #3a3f4a !important;
+}
+body.dark-mode #chatWindow::-webkit-scrollbar-thumb:hover {
+    background: #4a505b !important;
+}
+
+/* BURBUJAS */
+body.dark-mode .d-flex .p-2 {
+    background: #1a1a1a !important;
+    color: #e5e5e5 !important;
+    box-shadow: 0 2px 6px rgba(0,180,216,0.05) !important;
+}
+
+/* Hover */
+body.dark-mode .d-flex .p-2:hover {
+    transform: translateY(-2px) !important;
+}
+
+/* Mensaje OUT (enviado) */
+body.dark-mode .msg-out {
+    background: var(--msg-out-bg) !important;
+    color: var(--msg-out-text) !important;
+}
+
+/* Mensaje IN (recibido) */
+body.dark-mode .msg-in {
+    background: var(--msg-in-bg) !important;
+    color: var(--msg-in-text) !important;
+}
+
+/* Fecha y checks */
+body.dark-mode .small {
+    color: #cccccc !important;
+    opacity: .85 !important;
+}
+
+body.dark-mode .small .bi-check-all::before {
+    color: var(--check-pending) !important;
+}
+
+body.dark-mode .small.leido .bi-check-all::before {
+    color: var(--check-active) !important;
+}
+
+/* INPUT BAR */
+body.dark-mode .input-group {
+    background: #1f1f1f !important;
+    border-radius: 32px !important;
+    padding: 6px !important;
+    border: 1px solid #2d2d2d !important;
+    box-shadow: 0 5px 14px rgba(0,180,216,0.05) !important;
+}
+
+/* Campo de texto */
+body.dark-mode #txtMensaje {
+    color: #ffffff !important;
+}
+
+/* BOTÓN ENVIAR */
+body.dark-mode #btnEnviar {
+    background: var(--send-btn-bg) !important;
+}
+
+body.dark-mode #btnEnviar:hover {
+    background: var(--send-btn-hover) !important;
+    transform: scale(1.07) !important;
+}
+
+body.dark-mode #btnEnviar svg {
+    filter: drop-shadow(0px 2px 3px rgba(0,180,216,0.25)) !important;
 }

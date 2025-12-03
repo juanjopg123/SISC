@@ -180,7 +180,7 @@
                                 <asp:TextBox ID="txtNuevaRespuesta" runat="server" CssClass="form-control mb-2 rounded-3"
                                     TextMode="MultiLine" Rows="3" Placeholder="Escribe una respuesta..."></asp:TextBox>
                                 <asp:Button ID="btnAgregarRespuesta" runat="server" Text="Responder"
-                                    CssClass="btn btn-success btn-sm rounded-3" OnClick="btnAgregarRespuesta_Click" />
+                                    CssClass="btn btn-sm rounded-3" OnClick="btnAgregarRespuesta_Click" />
                             </div>
 
                             <asp:Repeater ID="rptRespuestas" runat="server" OnItemDataBound="rptRespuestas_ItemDataBound">

@@ -29,20 +29,20 @@
                     <div class="row justify-content-center">
                         <div class="col-12 col-md-8 col-lg-6">
 
-                            <div class="newchat-searchbar input-group input-group-lg">
-                                
-                                <span class="input-group-text newchat-icon">
+                            <div class="newchat-searchbar">
+                
+                                <span class="newchat-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#00b2c1" viewBox="0 0 16 16">
                                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85zm-5.242.656a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" />
                                     </svg>
                                 </span>
 
                                 <asp:TextBox ID="txtBuscarUsuario" runat="server"
-                                    CssClass="form-control newchat-input"
+                                    CssClass="newchat-input"
                                     Placeholder="Buscar usuario..." />
 
                                 <asp:Button ID="btnBuscar" runat="server"
-                                    CssClass="btn newchat-btn-search px-4"
+                                    CssClass="newchat-btn-search"
                                     Text="Buscar" OnClick="btnBuscar_Click" />
 
                             </div>
@@ -65,7 +65,10 @@
                                            onclick="iniciarChat(<%# Eval("IdUsuario") %>)">
 
                                             <!-- Avatar -->
-                                            <div class="newchat-avatar me-3"></div>
+                                            <img class="newchat-avatar me-3 rounded-circle"
+                                                 src='<%# Eval("FotoPerfil") %>'
+                                                 alt='<%# Eval("Nombre") %>'
+                                                 width="42" height="42" />
 
                                             <!-- Información -->
                                             <div class="flex-grow-1">
