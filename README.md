@@ -92,10 +92,6 @@ Descargar o clonar el proyecto desde el repositorio oficial.
 
 Abrir la solución en Visual Studio y restaurar todos los paquetes necesarios.
 
-- Configurar la cadena de conexión en App.config / Web.config.
-
-- Actualizar la conexión a la base de datos en los proyectos DataAccess y Presentation.
-
 - Crear la base de datos ejecutando la migración.
 
 Abrir la Package Manager Console, seleccionar DataAccess como proyecto predeterminado y ejecutar:
