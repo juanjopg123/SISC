@@ -65,3 +65,23 @@ Base de Datos: SQL Server
 Arquitectura: Proyecto en capas (Common, DataAccess, LogicBusiness, Presentation)
 
 IDE: Visual Studio
+
+--------------------------------------------------------------------------------------
+
+🗃️ Estructura 
+
+El proyecto está organizado en 4 capas principales:
+
+Common          → Entidades y atributos compartidos
+
+DataAccess      → Conexión, repositorios y migraciones  
+
+LogicBusiness   → Servicios, seguridad y lógica del negocio  
+
+Presentation    → Interfaz web (páginas, controles, scripts, estilos)
+
+--------------------------------------------------------------------------------------
+
+Base de datos en SQL Server con tablas como:
+
+Egresados, Categorías, OfertasEmpleo, Postulaciones, Eventos, Foros, Usuarios, etc.
