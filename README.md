@@ -82,6 +82,36 @@ Presentation    → Interfaz web (páginas, controles, scripts, estilos)
 
 --------------------------------------------------------------------------------------
 
+🛠️ Pasos de Instalación / Configuración
+
+Clonar el repositorio.
+
+Descargar o clonar el proyecto desde el repositorio oficial.
+
+Restaurar paquetes NuGet.
+
+Abrir la solución en Visual Studio y restaurar todos los paquetes necesarios.
+
+Configurar la cadena de conexión en App.config / Web.config.
+
+Actualizar la conexión a la base de datos en los proyectos DataAccess y Presentation.
+
+Crear la base de datos ejecutando la migración.
+
+Abrir la Package Manager Console, seleccionar DataAccess como proyecto predeterminado y ejecutar:
+
+update-database
+
+Configurar el proyecto de inicio.
+
+Establecer Presentation como proyecto de inicio y seleccionar Start/Login.aspx como página inicial.
+
+Ejecutar el proyecto desde Visual Studio.
+
+Ejecutar con IIS Express para iniciar la aplicación.
+
+--------------------------------------------------------------------------------------
+
 Base de datos en SQL Server con tablas como:
 
 Egresados, Categorías, OfertasEmpleo, Postulaciones, Eventos, Foros, Usuarios, etc.
